@@ -20,6 +20,7 @@ namespace RoRInvest
     {
         Int64 init;
         Int64 counter=2;
+        private bool check;// jika true maka init bertambah
         private helper h;
         private List<Product> productList = new List<Product>();
         public npv()
@@ -28,6 +29,7 @@ namespace RoRInvest
             init=(Int64)PhoneApplicationService.Current.State["yourparam"];
             h = new helper();           
             this.setControl();
+            check = false;
         }
 
         private void insertData()
@@ -62,10 +64,12 @@ namespace RoRInvest
                 prod.AnnualProfit = string.Format(CultureInfo.CurrentCulture, "{0:C}", varAnnualProfit);
                 prod.Npv = string.Format(CultureInfo.CurrentCulture, "{0:C}", varNpv);
                 productList.Add(prod);
+                check = true;
             }
             catch
             {
                 MessageBox.Show("Data invalid");
+                check = false;
             }
         }
         private void clearTextBox()
@@ -87,23 +91,25 @@ namespace RoRInvest
         private void ApplicationBarIconButton_Click(object sender, EventArgs e)
         {
             this.insertData();
-
-            if (counter <= init)
+            if (check)
             {
-                numbPP.Text = "Plan " + counter.ToString();
-               
-                this.clearTextBox();
-                counter++;
-                var toast = GetToast();
-                toast.TextWrapping = TextWrapping.Wrap;
+                if (counter <= init)
+                {
+                    numbPP.Text = "Plan " + counter.ToString();
 
-                toast.Show();
-            }
-            else
-            {
-                PhoneApplicationService.Current.State["yourparam"] = productList;
-                NavigationService.Navigate(new Uri("/ShowDataNpv.xaml", UriKind.Relative));
+                    this.clearTextBox();
+                    counter++;
+                    var toast = GetToast();
+                    toast.TextWrapping = TextWrapping.Wrap;
 
+                    toast.Show();
+                }
+                else
+                {
+                    PhoneApplicationService.Current.State["yourparam"] = productList;
+                    NavigationService.Navigate(new Uri("/ShowDataNpv.xaml", UriKind.Relative));
+
+                }
             }
         }
 

@@ -51,7 +51,7 @@ namespace RoRInvest
                 try
                 {
                     PhoneApplicationService.Current.State["yourparam"] = Convert.ToInt64(manyPlan.Text);
-                    NavigationService.Navigate(new Uri("/npv.xaml", UriKind.Relative));
+                    NavigationService.Navigate(new Uri("/NpvForm.xaml", UriKind.Relative));
                 }
                 catch(Exception ex)
                 {
@@ -77,7 +77,7 @@ namespace RoRInvest
                 try
                 {
                     PhoneApplicationService.Current.State["yourparam"] = Convert.ToInt64(manyPlan.Text);
-                    NavigationService.Navigate(new Uri("/futureValue.xaml", UriKind.Relative));
+                    NavigationService.Navigate(new Uri("/FutureValueForm.xaml", UriKind.Relative));
                 }
                 catch (Exception ex)
                 {

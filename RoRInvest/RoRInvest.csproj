@@ -96,22 +96,22 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FutValue.cs" />
-    <Compile Include="FutureValueDataContext.cs" />
-    <Compile Include="NetPresValue.cs" />
-    <Compile Include="NpvDataContext.cs" />
-    <Compile Include="ProductDataContext.cs" />
-    <Compile Include="futureValue.xaml.cs">
-      <DependentUpon>futureValue.xaml</DependentUpon>
+    <Compile Include="Class\FutValue.cs" />
+    <Compile Include="Class\FutureValueDataContext.cs" />
+    <Compile Include="Class\NetPresValue.cs" />
+    <Compile Include="Class\NpvDataContext.cs" />
+    <Compile Include="Class\ProductDataContext.cs" />
+    <Compile Include="FutureValueForm.xaml.cs">
+      <DependentUpon>FutureValueForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="helper.cs" />
+    <Compile Include="Class\helper.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="npv.xaml.cs">
-      <DependentUpon>npv.xaml</DependentUpon>
+    <Compile Include="NpvForm.xaml.cs">
+      <DependentUpon>NpvForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Product.cs" />
+    <Compile Include="Class\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShowDataFV.xaml.cs">
       <DependentUpon>ShowDataFV.xaml</DependentUpon>
@@ -125,7 +125,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="futureValue.xaml">
+    <Page Include="FutureValueForm.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -133,7 +133,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="npv.xaml">
+    <Page Include="NpvForm.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -159,6 +159,7 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Icon\NPV.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="SplashScreenImage.jpg" />
     <Resource Include="Toolkit.Content\ApplicationBar.Add.png" />

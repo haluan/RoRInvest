@@ -20,6 +20,7 @@ namespace RoRInvest
         Int64 init = 0;
         Int64 counter=2;
         private helper h;
+        private bool check;// jika true maka init bertambah
         private List<Product> productList = new List<Product>();
         public futureValue()
         {
@@ -27,22 +28,26 @@ namespace RoRInvest
             init = (Int64)PhoneApplicationService.Current.State["yourparam"];
             h = new helper();
             this.setControl();
+            check = false;
         }
 
         private void ApplicationBarIconButton_Click(object sender, EventArgs e)
         {
             this.insertData();
-            if (counter <= init)
+            if (check)
             {
-                numbPP.Text = "Plan " + counter.ToString();
-                this.clearTextBox();
-                counter++;
-            }
-            else
-            {
-                PhoneApplicationService.Current.State["yourparam"] = productList;
-                NavigationService.Navigate(new Uri("/ShowDataFV.xaml", UriKind.Relative));
-                this.clearTextBox();
+                if (counter <= init)
+                {
+                    numbPP.Text = "Plan " + counter.ToString();
+                    this.clearTextBox();
+                    counter++;
+                }
+                else
+                {
+                    PhoneApplicationService.Current.State["yourparam"] = productList;
+                    NavigationService.Navigate(new Uri("/ShowDataFV.xaml", UriKind.Relative));
+                    this.clearTextBox();
+                }
             }
         }
         private void setControl()
@@ -65,10 +70,12 @@ namespace RoRInvest
                 prod.InitialCost = string.Format(CultureInfo.CurrentCulture, "{0:C}", varInitialCost);
                 prod.FutureValue = string.Format(CultureInfo.CurrentCulture, "{0:C}", varFutureValue);
                 productList.Add(prod);
+                check = true;
             }
             catch
             {
                 MessageBox.Show("Data invalid");
+                check = false;
             }
         }
        
