@@ -1,0 +1,52 @@
+﻿<phone:PhoneApplicationPage 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+	xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
+	x:Class="RoRInvest.npv"
+	FontFamily="{StaticResource PhoneFontFamilyNormal}"
+	FontSize="{StaticResource PhoneFontSizeNormal}"
+	Foreground="{StaticResource PhoneForegroundBrush}"
+	Orientation="Portrait"
+	shell:SystemTray.IsVisible="True">
+	 <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Submit" Click="ApplicationBarIconButton_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Cancel" Click="ApplicationBarIconButton_Click_1"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+	<!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		
+		<!--TitlePanel contains the name of the application and page title-->
+		<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+			<TextBlock x:Name="ApplicationTitle" Text="Investment Break" Style="{StaticResource PhoneTextNormalStyle}"/>
+			<TextBlock x:Name="PageTitle" Text="Net Present Value" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="48"/>
+		</StackPanel>
+
+		<!--ContentPanel - place additional content here-->
+		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+			<TextBlock x:Name="numbPP" Height="36" Margin="8,69,200,0" TextWrapping="Wrap" Text="Plan 1" VerticalAlignment="Top" FontSize="32"/>
+			<TextBlock HorizontalAlignment="Left" Margin="27,223,0,0" TextWrapping="Wrap" Text="Initial Cost" Width="149" Height="39" VerticalAlignment="Top"/>
+			<TextBlock HorizontalAlignment="Left" Height="43" Margin="27,296,0,0" TextWrapping="Wrap" Text="Annual Profit" VerticalAlignment="Top" Width="149"/>
+			<TextBlock HorizontalAlignment="Left" Margin="27,0,0,72" TextWrapping="Wrap" Text="Lifetime Project" Width="153" Height="47" VerticalAlignment="Bottom"/>
+			<TextBox x:Name="initialCost" Margin="193,205,0,0" TextWrapping="Wrap" Height="75" VerticalAlignment="Top"/>
+			<TextBox x:Name="annualProfit" Height="75" Margin="193,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+			<TextBox x:Name="lifetimeProject" Height="75" Margin="193,0,0,62" TextWrapping="Wrap" VerticalAlignment="Bottom" d:LayoutOverrides="VerticalAlignment"/>
+			<TextBlock HorizontalAlignment="Left" Margin="27,0,0,140" TextWrapping="Wrap" Text="Minimum Atractive Rate of Return " Width="162" Height="57" VerticalAlignment="Bottom" FontSize="18.667"/>
+			<TextBox x:Name="marr" Height="75" Margin="193,0,106,137" TextWrapping="Wrap" VerticalAlignment="Bottom" d:LayoutOverrides="VerticalAlignment"/>
+			<TextBlock HorizontalAlignment="Right" Height="40" Margin="0,0,17,157" TextWrapping="Wrap" Text="%" VerticalAlignment="Bottom" Width="85" FontSize="32"/>
+		</Grid>
+		<TextBlock HorizontalAlignment="Left" Height="31" Margin="40,159,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="124" Grid.Row="1"/>
+		<TextBox x:Name="name" Height="73" Margin="206,0,12,360" TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Row="1"/>
+	</Grid>
+</phone:PhoneApplicationPage>
