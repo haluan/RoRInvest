@@ -12,7 +12,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Globalization;
-using Coding4Fun.Toolkit.Controls;
+//using Coding4Fun.Toolkit.Controls;
 
 namespace RoRInvest
 {
@@ -80,14 +80,14 @@ namespace RoRInvest
             name.Text = "";
             marr.Text = "";
         }
-        private static ToastPrompt GetToast()
-         {
-            return new ToastPrompt
-            {
-              TextOrientation = System.Windows.Controls.Orientation.Vertical,
-              Message = "Please, FIll Next Plan"
-            };
-        }
+        //private static ToastPrompt GetToast()
+         //{
+            //return new ToastPrompt
+            //{
+              //TextOrientation = System.Windows.Controls.Orientation.Vertical,
+              //Message = "Please, FIll Next Plan"
+            //};
+        //}
         private void ApplicationBarIconButton_Click(object sender, EventArgs e)
         {
             this.insertData();
@@ -99,10 +99,10 @@ namespace RoRInvest
 
                     this.clearTextBox();
                     counter++;
-                    var toast = GetToast();
-                    toast.TextWrapping = TextWrapping.Wrap;
+                   // var toast = GetToast();
+                   // toast.TextWrapping = TextWrapping.Wrap;
 
-                    toast.Show();
+                    //toast.Show();
                 }
                 else
                 {

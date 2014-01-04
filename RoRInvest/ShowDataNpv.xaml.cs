@@ -83,7 +83,31 @@ namespace RoRInvest
 
             }
         }
+        private void deleteDataNPV(NetPresValue npv)
+        {
+            using (NpvDataContext context = new NpvDataContext())
+            {
+                // find a city to update
+                IQueryable<NetPresValue> npvQuery = from n in context.Npv where n.Name == npv.Name select n;
+                NetPresValue npvToDelete = new NetPresValue();
 
+                npvToDelete = npvQuery.FirstOrDefault();
+                MessageBox.Show(npvQuery.FirstOrDefault().Name);
+                //hapus data yang diseleksi
+
+                try
+                {
+                    context.Npv.DeleteOnSubmit(npvQuery.FirstOrDefault());
+
+                    // save changes to the database
+                    context.SubmitChanges();
+                }
+                catch
+                {
+
+                }
+            }
+        }
         private void StackPanel_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             if (MessageBox.Show("Are you sure?", "Save this plan?", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
@@ -92,6 +116,17 @@ namespace RoRInvest
                 p = (Product)targetOn.SelectedItem;
                 this.insertData(p);
                 
+            }
+        }
+
+        private void Delete_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure?", "Save this plan?", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+            {
+               NetPresValue n = new NetPresValue();
+                n = (NetPresValue)targetSaved.SelectedItem;
+                this.deleteDataNPV(n);
+
             }
         }
     }

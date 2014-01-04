@@ -55,6 +55,7 @@ namespace RoRInvest
             h.setInputScope(initialCost);
             h.setInputScope(lifetimeProject);
             h.setInputScope(interest);
+            
 
         }
         private void insertData()

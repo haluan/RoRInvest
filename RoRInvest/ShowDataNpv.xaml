@@ -16,7 +16,7 @@
 
     <!--LayoutRoot contains the root grid where all other page content is placed-->
     <Grid x:Name="LayoutRoot">
-        <controls:Panorama Title="my application">
+        <controls:Panorama Title="Net Present Value">
 
             <!--Panorama item one-->
             <controls:PanoramaItem Header="Result">
@@ -26,11 +26,16 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Vertical" Tap="StackPanel_Tap">
                                     <TextBlock Text="{Binding Name}" Margin="5" Foreground="{StaticResource PhoneAccentBrush}"
-                                        Style="{StaticResource PhoneTextLargeStyle}" FontWeight="Bold" FontSize="20" />
+                                        Style="{StaticResource PhoneTextLargeStyle}" FontWeight="Bold" FontSize="50" />
+									<TextBlock Text="Initial Cost" Margin="10,0,0,0" FontWeight="Bold"/>
                                     <TextBlock Text="{Binding InitialCost}"    Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
+									<TextBlock Text="Minimun Atractive Rate of Return (%)" Margin="10,0,0,0" FontWeight="Bold"/>
 									<TextBlock Text="{Binding Marr}"    Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
+									<TextBlock Text="Project Lifetime (years)" Margin="10,0,0,0" FontWeight="Bold"/>
 									<TextBlock Text="{Binding LifetimeProject}"    Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
+									<TextBlock Text="Net Present Value" Margin="10,0,0,0" FontWeight="Bold"/>
                                     <TextBlock Text="{Binding Npv}"    Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
+									<TextBlock Text="Status" Margin="10,0,0,0" FontWeight="Bold"/>
 									<TextBlock Text="{Binding Status}" Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
 								</StackPanel>
                             </DataTemplate>
@@ -45,13 +50,18 @@
                 	<ListBox x:Name="targetSaved">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Vertical" Tap="Delete_Tap">
                                     <TextBlock Text="{Binding Name}" Margin="5" Foreground="{StaticResource PhoneAccentBrush}"
-                                        Style="{StaticResource PhoneTextLargeStyle}" FontWeight="Bold" FontSize="20" />
+                                        Style="{StaticResource PhoneTextLargeStyle}" FontWeight="Bold" FontSize="50" />
+                                   <TextBlock Text="Initial Cost" Margin="10,0,0,0" FontWeight="Bold"/>
                                     <TextBlock Text="{Binding InitialCost}"    Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
+                                    <TextBlock Text="Minimun Atractive Rate of Return (%)" Margin="10,0,0,0" FontWeight="Bold"/>
 									<TextBlock Text="{Binding Marr}"    Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
+                                    <TextBlock Text="Project Lifetime (years)" Margin="10,0,0,0" FontWeight="Bold"/>
 									<TextBlock Text="{Binding LifetimeProject}"    Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
+									<TextBlock Text="Net Present Value" Margin="10,0,0,0" FontWeight="Bold"/>
                                     <TextBlock Text="{Binding Npv}"    Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
+									<TextBlock Text="Status" Margin="10,0,0,0" FontWeight="Bold"/>
 									<TextBlock Text="{Binding Status}" Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
                                 </StackPanel>
                             </DataTemplate>

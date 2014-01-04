@@ -17,9 +17,10 @@
     <!--Sample code showing usage of ApplicationBar-->
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Net Present Value" Click="ApplicationBarMenuItem_Click"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Future Value" Click="ApplicationBarMenuItem_Click_1"/>
+            <shell:ApplicationBarIconButton IconUri="/Pictures/Dark/add.png" Text="Net Present Value" Click="ApplicationBarMenuItem_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Pictures/Dark/check.png" Text="Future Value" Click="ApplicationBarMenuItem_Click_1"/>
             <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Saved Plan" Click="SavedPlan_CLick"/>
                 <shell:ApplicationBarMenuItem Text="Help"/>
                 <shell:ApplicationBarMenuItem Text="About"/>
             </shell:ApplicationBar.MenuItems>
@@ -35,8 +36,8 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="Rate of Return Investment" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="Scheme" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="ApplicationTitle" Text="Investment Break" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="HOME" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->

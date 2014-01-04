@@ -52,6 +52,7 @@ namespace RoRInvest
                 {
                     PhoneApplicationService.Current.State["yourparam"] = Convert.ToInt64(manyPlan.Text);
                     NavigationService.Navigate(new Uri("/NpvForm.xaml", UriKind.Relative));
+                    manyPlan.Text = "";
                 }
                 catch(Exception ex)
                 {
@@ -78,6 +79,7 @@ namespace RoRInvest
                 {
                     PhoneApplicationService.Current.State["yourparam"] = Convert.ToInt64(manyPlan.Text);
                     NavigationService.Navigate(new Uri("/FutureValueForm.xaml", UriKind.Relative));
+                    manyPlan.Text ="";
                 }
                 catch (Exception ex)
                 {
@@ -90,6 +92,11 @@ namespace RoRInvest
         {
             h.setInputScope(manyPlan);
 
+        }
+
+        private void SavedPlan_CLick(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/SavedData.xaml", UriKind.Relative));
         }
 
        

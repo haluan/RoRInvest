@@ -77,14 +77,48 @@ namespace RoRInvest
 
             }
         }
+        private void deleteDataFV(FutValue fv)
+        {
+            using (FutureValueDataContext context = new FutureValueDataContext())
+            {
+                // find a city to update
+                IQueryable<FutValue> fvQuery = from f in context.Futurevalue where f.Name == fv.Name select f;
+                FutValue fvTODelete = new FutValue();
+
+                fvTODelete = fvQuery.FirstOrDefault();
+                MessageBox.Show(fvQuery.FirstOrDefault().Name);
+                //hapus data yang diseleksi
+
+                try
+                {
+                    context.Futurevalue.DeleteOnSubmit(fvQuery.FirstOrDefault());
+
+                    // save changes to the database
+                    context.SubmitChanges();
+                }
+                catch
+                {
+
+                }
+            }
+        }
 
         private void StackPanel_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             if (MessageBox.Show("Are you sure?", "Save this plan?", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
             {
                 Product p = (Product)targetOn.SelectedItem;
-                p = (Product)targetOn.SelectedItem;
+               
                 this.insertData(p);
+            }
+        }
+
+        private void Delete_Selected(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure?", "Delete this plan?", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+            {
+                FutValue f = (FutValue)targetSaved.SelectedItem;
+                this.deleteDataFV(f);
             }
         }
     }

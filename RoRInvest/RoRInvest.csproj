@@ -26,7 +26,7 @@
     <ValidateXaml>true</ValidateXaml>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <Utf8Output>true</Utf8Output>
-    <ExpressionBlendVersion>4.0.30816.0</ExpressionBlendVersion>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,18 +50,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Coding4Fun.Toolkit.Audio">
-      <HintPath>..\..\..\..\..\Desktop\Toolkit\Coding4Fun.Toolkit.Audio.dll</HintPath>
-    </Reference>
-    <Reference Include="Coding4Fun.Toolkit.Controls">
-      <HintPath>..\..\..\..\..\Desktop\Toolkit\Coding4Fun.Toolkit.Controls.dll</HintPath>
-    </Reference>
-    <Reference Include="Coding4Fun.Toolkit.Net">
-      <HintPath>..\..\..\..\..\Desktop\Toolkit\Coding4Fun.Toolkit.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="Coding4Fun.Toolkit.Storage">
-      <HintPath>..\..\..\..\..\Desktop\Toolkit\Coding4Fun.Toolkit.Storage.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Expression.Interactions" />
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls" />
@@ -113,6 +101,9 @@
     </Compile>
     <Compile Include="Class\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SavedData.xaml.cs">
+      <DependentUpon>SavedData.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShowDataFV.xaml.cs">
       <DependentUpon>ShowDataFV.xaml</DependentUpon>
     </Compile>
@@ -137,6 +128,10 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="SavedData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ShowDataFV.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -149,7 +144,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
-    <None Include="Properties\WMAppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="RoRInvest_2013_12_29_11_50_07.sap" />
   </ItemGroup>
   <ItemGroup>
@@ -159,7 +156,83 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Icon\NPV.png" />
+    <Resource Include="Pictures\NPV.png" />
+    <Content Include="Pictures\Dark\add.png" />
+    <Content Include="Pictures\Dark\back.png" />
+    <Content Include="Pictures\Dark\basecircle.png" />
+    <Content Include="Pictures\Dark\cancel.png" />
+    <Content Include="Pictures\Dark\check.png" />
+    <Content Include="Pictures\Dark\close.png" />
+    <Content Include="Pictures\Dark\DarkIcons.dll" />
+    <Content Include="Pictures\Dark\delete.png" />
+    <Content Include="Pictures\Dark\download.png" />
+    <Content Include="Pictures\Dark\edit.png" />
+    <Content Include="Pictures\Dark\favs.addto.png" />
+    <Content Include="Pictures\Dark\favs.png" />
+    <Content Include="Pictures\Dark\feature.alarm.png" />
+    <Content Include="Pictures\Dark\feature.calendar.png" />
+    <Content Include="Pictures\Dark\feature.camera.png" />
+    <Content Include="Pictures\Dark\feature.email.png" />
+    <Content Include="Pictures\Dark\feature.phone.png" />
+    <Content Include="Pictures\Dark\feature.search.png" />
+    <Content Include="Pictures\Dark\feature.settings.png" />
+    <Content Include="Pictures\Dark\feature.video.png" />
+    <Content Include="Pictures\Dark\folder.png" />
+    <Content Include="Pictures\Dark\like.png" />
+    <Content Include="Pictures\Dark\microphone.png" />
+    <Content Include="Pictures\Dark\minus.png" />
+    <Content Include="Pictures\Dark\new.png" />
+    <Content Include="Pictures\Dark\next.png" />
+    <Content Include="Pictures\Dark\overflowdots.png" />
+    <Content Include="Pictures\Dark\questionmark.png" />
+    <Content Include="Pictures\Dark\refresh.png" />
+    <Content Include="Pictures\Dark\save.png" />
+    <Content Include="Pictures\Dark\share.png" />
+    <Content Include="Pictures\Dark\stop.png" />
+    <Content Include="Pictures\Dark\sync.png" />
+    <Content Include="Pictures\Dark\transport.ff.png" />
+    <Content Include="Pictures\Dark\transport.pause.png" />
+    <Content Include="Pictures\Dark\transport.play.png" />
+    <Content Include="Pictures\Dark\transport.rew.png" />
+    <Content Include="Pictures\Dark\upload.png" />
+    <Content Include="Pictures\Light\add.png" />
+    <Content Include="Pictures\Light\back.png" />
+    <Content Include="Pictures\Light\basecircle.png" />
+    <Content Include="Pictures\Light\cancel.png" />
+    <Content Include="Pictures\Light\check.png" />
+    <Content Include="Pictures\Light\close.png" />
+    <Content Include="Pictures\Light\delete.png" />
+    <Content Include="Pictures\Light\download.png" />
+    <Content Include="Pictures\Light\edit.png" />
+    <Content Include="Pictures\Light\favs.addto.png" />
+    <Content Include="Pictures\Light\favs.png" />
+    <Content Include="Pictures\Light\feature.alarm.png" />
+    <Content Include="Pictures\Light\feature.calendar.png" />
+    <Content Include="Pictures\Light\feature.camera.png" />
+    <Content Include="Pictures\Light\feature.email.png" />
+    <Content Include="Pictures\Light\feature.phone.png" />
+    <Content Include="Pictures\Light\feature.search.png" />
+    <Content Include="Pictures\Light\feature.settings.png" />
+    <Content Include="Pictures\Light\feature.video.png" />
+    <Content Include="Pictures\Light\folder.png" />
+    <Content Include="Pictures\Light\LightIcons.dll" />
+    <Content Include="Pictures\Light\like.png" />
+    <Content Include="Pictures\Light\microphone.png" />
+    <Content Include="Pictures\Light\minus.png" />
+    <Content Include="Pictures\Light\new.png" />
+    <Content Include="Pictures\Light\next.png" />
+    <Content Include="Pictures\Light\overflowdots.png" />
+    <Content Include="Pictures\Light\questionmark.png" />
+    <Content Include="Pictures\Light\refresh.png" />
+    <Content Include="Pictures\Light\save.png" />
+    <Content Include="Pictures\Light\share.png" />
+    <Content Include="Pictures\Light\stop.png" />
+    <Content Include="Pictures\Light\sync.png" />
+    <Content Include="Pictures\Light\transport.ff.png" />
+    <Content Include="Pictures\Light\transport.pause.png" />
+    <Content Include="Pictures\Light\transport.play.png" />
+    <Content Include="Pictures\Light\transport.rew.png" />
+    <Content Include="Pictures\Light\upload.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="SplashScreenImage.jpg" />
     <Resource Include="Toolkit.Content\ApplicationBar.Add.png" />
