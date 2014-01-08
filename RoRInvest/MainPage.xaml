@@ -17,12 +17,12 @@
     <!--Sample code showing usage of ApplicationBar-->
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Pictures/Dark/add.png" Text="Net Present Value" Click="ApplicationBarMenuItem_Click"/>
-            <shell:ApplicationBarIconButton IconUri="/Pictures/Dark/check.png" Text="Future Value" Click="ApplicationBarMenuItem_Click_1"/>
+            <shell:ApplicationBarIconButton IconUri="/Pictures/NPV32.png" Text="Net Present Value" Click="ApplicationBarMenuItem_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Pictures/FV32.png" Text="Future Value" Click="ApplicationBarMenuItem_Click_1"/>
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="Saved Plan" Click="SavedPlan_CLick"/>
-                <shell:ApplicationBarMenuItem Text="Help"/>
-                <shell:ApplicationBarMenuItem Text="About"/>
+                <shell:ApplicationBarMenuItem Text="Help" Click="Help"/>
+                <shell:ApplicationBarMenuItem Text="About" Click="About"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>

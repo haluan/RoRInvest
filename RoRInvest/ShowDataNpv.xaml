@@ -35,6 +35,8 @@
 									<TextBlock Text="{Binding LifetimeProject}"    Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
 									<TextBlock Text="Net Present Value" Margin="10,0,0,0" FontWeight="Bold"/>
                                     <TextBlock Text="{Binding Npv}"    Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
+                                    <TextBlock Text="Internal Rate of Return" Margin="10,0,0,0" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Irr}"    Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
 									<TextBlock Text="Status" Margin="10,0,0,0" FontWeight="Bold"/>
 									<TextBlock Text="{Binding Status}" Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
 								</StackPanel>
@@ -61,7 +63,9 @@
 									<TextBlock Text="{Binding LifetimeProject}"    Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
 									<TextBlock Text="Net Present Value" Margin="10,0,0,0" FontWeight="Bold"/>
                                     <TextBlock Text="{Binding Npv}"    Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
-									<TextBlock Text="Status" Margin="10,0,0,0" FontWeight="Bold"/>
+                                    <TextBlock Text="Internal Rate of Return" Margin="10,0,0,0" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Irr}"    Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
+                                    <TextBlock Text="Status" Margin="10,0,0,0" FontWeight="Bold"/>
 									<TextBlock Text="{Binding Status}" Margin="20,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" />
                                 </StackPanel>
                             </DataTemplate>

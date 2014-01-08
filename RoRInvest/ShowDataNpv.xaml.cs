@@ -59,6 +59,7 @@ namespace RoRInvest
                     npv.LifetimeProject = p.LifetimeProject;
                     npv.Npv = p.Npv;
                     npv.Status = p.Status;
+                    npv.Irr = p.Irr;
                     try
                     {
                        
@@ -92,7 +93,7 @@ namespace RoRInvest
                 NetPresValue npvToDelete = new NetPresValue();
 
                 npvToDelete = npvQuery.FirstOrDefault();
-                MessageBox.Show(npvQuery.FirstOrDefault().Name);
+               
                 //hapus data yang diseleksi
 
                 try
@@ -115,18 +116,19 @@ namespace RoRInvest
                 Product p = new Product();
                 p = (Product)targetOn.SelectedItem;
                 this.insertData(p);
+                this.targetSaved.ItemsSource = (List<NetPresValue>)this.GetNpv();
                 
             }
         }
 
         private void Delete_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            if (MessageBox.Show("Are you sure?", "Save this plan?", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+            if (MessageBox.Show("Are you sure?", "Delete this plan?", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
             {
                NetPresValue n = new NetPresValue();
                 n = (NetPresValue)targetSaved.SelectedItem;
                 this.deleteDataNPV(n);
-
+                this.targetSaved.ItemsSource = (List<NetPresValue>)this.GetNpv();
             }
         }
     }

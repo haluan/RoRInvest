@@ -16,7 +16,7 @@ namespace RoRInvest
 {
     public class NpvDataContext : DataContext
     {
-        public const string ConnectionString = "Data Source=isostore:/NpvNew.sdf";
+        public const string ConnectionString = "Data Source=isostore:/NpvFix.sdf";
         public NpvDataContext() : base(ConnectionString)
         {
             if (!this.DatabaseExists())

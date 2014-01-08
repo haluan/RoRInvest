@@ -99,6 +99,16 @@ namespace RoRInvest
             NavigationService.Navigate(new Uri("/SavedData.xaml", UriKind.Relative));
         }
 
+        private void Help(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Help.xaml", UriKind.Relative));
+        }
+
+        private void About(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/About.xaml", UriKind.Relative));
+        }
+
        
     }
 }

@@ -60,6 +60,7 @@ namespace RoRInvest
                 {
                     prod.Status = "Qualified";
                 }
+                prod.countIRR(varInitialCost, varAnnualProfit, prod.LifetimeProject);
                 prod.InitialCost = string.Format(CultureInfo.CurrentCulture, "{0:C}", varInitialCost);
                 prod.AnnualProfit = string.Format(CultureInfo.CurrentCulture, "{0:C}", varAnnualProfit);
                 prod.Npv = string.Format(CultureInfo.CurrentCulture, "{0:C}", varNpv);

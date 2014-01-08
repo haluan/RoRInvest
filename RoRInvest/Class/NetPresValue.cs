@@ -35,6 +35,8 @@ namespace RoRInvest
         public String Npv { get; set; }
         [Column]
         public String Status { get; set; }
+        [Column]
+        public double Irr { get; set; }
 
     }
 }

@@ -31,5 +31,6 @@ namespace RoRInvest
         public Int64 LifetimeProject { get; set; }
         [Column]
         public String FutureValue { get; set; }
+
     }
 }
