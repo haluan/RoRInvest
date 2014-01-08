@@ -13,6 +13,7 @@ namespace RoRInvest
 {
     public class helper
     {
+        //secara otomatis merubah keyboard ke numerical untuk textbox tertentu
         public void setInputScope(TextBox textBoxControl)
         {
             InputScopeNameValue type = InputScopeNameValue.Number;

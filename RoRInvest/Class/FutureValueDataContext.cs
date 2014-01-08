@@ -15,14 +15,17 @@ namespace RoRInvest
 {
     public class FutureValueDataContext : DataContext
     {
+        //insisialsisasi nama database
         public const string ConnectionString = "Data Source=isostore:/Fv.sdf";
         public FutureValueDataContext() : base(ConnectionString)
         {
+            //jika database belum ada maka dibuat dahulu
             if (!this.DatabaseExists())
             {
                 this.CreateDatabase();
             }
         }
+        //mengembalikan table dari database
         public Table<FutValue> Futurevalue{
             get
             {

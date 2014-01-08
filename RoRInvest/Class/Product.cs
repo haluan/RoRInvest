@@ -26,6 +26,7 @@ namespace RoRInvest
         public Int64 LifetimeProject { get; set; }
         public String Status { get; set; }
 
+        //menghitung Internal rate of return
         public void countIRR(double InitialCost, double AnnualProfit, Int64 LifetimeProject)
         {
             double Interest=0;

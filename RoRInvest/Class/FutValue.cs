@@ -14,9 +14,11 @@ using Microsoft.Phone.Data.Linq;
 using Microsoft.Phone.Data.Linq.Mapping;
 namespace RoRInvest
 {
+    //tabel
     [Table]
     public class FutValue : Product
     {
+        //column primary key dengan id auto increment
         [Column(IsPrimaryKey = true, IsDbGenerated = true,
             DbType = "INT NOT NULL Identity", CanBeNull = false,
         AutoSync = AutoSync.OnInsert)]

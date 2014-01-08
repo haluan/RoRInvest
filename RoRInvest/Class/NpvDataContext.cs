@@ -16,14 +16,17 @@ namespace RoRInvest
 {
     public class NpvDataContext : DataContext
     {
+        //insisialsisasi nama database
         public const string ConnectionString = "Data Source=isostore:/NpvFix.sdf";
         public NpvDataContext() : base(ConnectionString)
         {
+            //jika database belum ada maka dibuat dahulu
             if (!this.DatabaseExists())
             {
                 this.CreateDatabase();
             }
         }
+        //mengembalikan table dari database
         public Table<NetPresValue> Npv
         {
             get

@@ -18,17 +18,23 @@ namespace RoRInvest
 {
     public partial class npv : PhoneApplicationPage
     {
+        //menampung jumlah rencana yang diajukan
         Int64 init;
+        //counter langsung diasing 2 karena minimal perulangan ada satu kali
         Int64 counter=2;
-        private bool check;// jika true maka init bertambah
+        // jika true maka init bertambah
+        private bool check;
         private helper h;
         private List<Product> productList = new List<Product>();
         public npv()
         {
             InitializeComponent();
+            //mendapatkan nilai dari form sebelumnya
             init=(Int64)PhoneApplicationService.Current.State["yourparam"];
-            h = new helper();           
+            h = new helper();
+            //memanggil fungsi setControl
             this.setControl();
+            //inisialisasi check ke dalam false
             check = false;
         }
 

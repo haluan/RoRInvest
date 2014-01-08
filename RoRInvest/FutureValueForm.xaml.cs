@@ -17,29 +17,41 @@ namespace RoRInvest
 {
     public partial class futureValue : PhoneApplicationPage
     {
+        //menampung jumlah rencana yang diajukan
         Int64 init = 0;
+        //counter langsung diasing 2 karena minimal perulangan ada satu kali
         Int64 counter=2;
         private helper h;
-        private bool check;// jika true maka init bertambah
+        // jika true maka init bertambah
+        private bool check;
         private List<Product> productList = new List<Product>();
         public futureValue()
         {
             InitializeComponent();
+            //mendapatkan nilai dari form sebelumnya
             init = (Int64)PhoneApplicationService.Current.State["yourparam"];
             h = new helper();
+            //memanggil fungsi setControl
             this.setControl();
+            //inisialisasi check ke dalam false
             check = false;
         }
 
         private void ApplicationBarIconButton_Click(object sender, EventArgs e)
         {
+            //memasukkan data ketika di click
             this.insertData();
+            //selama check true 
             if (check)
             {
+                //jika counter masih kurang/samadengan init
                 if (counter <= init)
                 {
+                    //merubah nomor rencana
                     numbPP.Text = "Plan " + counter.ToString();
+                    //mengosongkan textbox
                     this.clearTextBox();
+                    //counter ditambah
                     counter++;
                 }
                 else
@@ -50,6 +62,7 @@ namespace RoRInvest
                 }
             }
         }
+        //mengeset keyboard ke numerical
         private void setControl()
         {
             h.setInputScope(initialCost);
@@ -58,6 +71,7 @@ namespace RoRInvest
             
 
         }
+        //memasukkan data ke List
         private void insertData()
         {
             Product prod = new Product();
@@ -79,7 +93,7 @@ namespace RoRInvest
                 check = false;
             }
         }
-       
+       //mengahpus isi textbox
         private void clearTextBox()
         {
             initialCost.Text = "";
@@ -87,6 +101,7 @@ namespace RoRInvest
             lifetimeProject.Text = "";
             name.Text = "";
         }
+        //membatalkan aksi
         private void ApplicationBarIconButton_Click_1(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));

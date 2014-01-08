@@ -91,7 +91,6 @@
     <Compile Include="Class\FutureValueDataContext.cs" />
     <Compile Include="Class\NetPresValue.cs" />
     <Compile Include="Class\NpvDataContext.cs" />
-    <Compile Include="Class\ProductDataContext.cs" />
     <Compile Include="FutureValueForm.xaml.cs">
       <DependentUpon>FutureValueForm.xaml</DependentUpon>
     </Compile>
