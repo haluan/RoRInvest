@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Globalization;
+using Coding4Fun.Toolkit.Controls;
 
 namespace RoRInvest
 {
@@ -53,6 +54,12 @@ namespace RoRInvest
                     this.clearTextBox();
                     //counter ditambah
                     counter++;
+                    //menampung toast
+                    var toast = GetToast();
+                    //toast posisi wrapping
+                    toast.TextWrapping = TextWrapping.Wrap;
+                    //toast ditampilkan
+                    toast.Show();
                 }
                 else
                 {
@@ -93,6 +100,15 @@ namespace RoRInvest
                 check = false;
             }
         }
+        //menampilkan toast message
+        private static ToastPrompt GetToast()
+        {
+            return new ToastPrompt
+            {
+                TextOrientation = System.Windows.Controls.Orientation.Vertical,
+                Message = "Please, FIll Next Plan"
+            };
+        }
        //mengahpus isi textbox
         private void clearTextBox()
         {
@@ -104,7 +120,7 @@ namespace RoRInvest
         //membatalkan aksi
         private void ApplicationBarIconButton_Click_1(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+            this.clearTextBox();
         }
     }
 }
