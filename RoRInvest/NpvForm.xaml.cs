@@ -57,16 +57,24 @@ namespace RoRInvest
                     counter += temp;
                 }
                 double varNpv = counter - varInitialCost;
-                
+                prod.Status = "";
                 if (varNpv <= -1)
                 {
-                    prod.Status = "Not Qualified";
+                    prod.Status = "NPV Not Qualified";
                 }
                 else
                 {
-                    prod.Status = "Qualified";
+                    prod.Status = "NPV Qualified";
                 }
                 prod.countIRR(varInitialCost, varAnnualProfit, prod.LifetimeProject);
+                if (prod.Irr < 0.001)
+                {
+                    prod.Status += " and will run at loss";
+                }
+                else if(prod.Irr >=0.001)
+                {
+                    prod.Status += " and positive return";
+                }
                 prod.InitialCost = string.Format(CultureInfo.CurrentCulture, "{0:C}", varInitialCost);
                 prod.AnnualProfit = string.Format(CultureInfo.CurrentCulture, "{0:C}", varAnnualProfit);
                 prod.Npv = string.Format(CultureInfo.CurrentCulture, "{0:C}", varNpv);

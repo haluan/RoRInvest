@@ -43,7 +43,7 @@ namespace RoRInvest
                     Interest += 0.01;
                 }
             } while (1 != 0);
-            this.Irr = Interest;
+            this.Irr = Math.Round(Interest,3);
             
         }
 
